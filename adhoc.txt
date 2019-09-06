@@ -1,0 +1,43 @@
+   
+yum install ansible -y
+easy_install pip
+pip install ansible  
+git clone https://github.com/shank-con/ansible-light.git
+ansible --version
+touch ansible.cfg
+ansible --version
+ansible localhost -m ping 
+ ansible localhost -m ping -vvvvv
+ ansible localhost -m ping -vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+   31  2019-09-06 15:08:18 ansible localhost -m copy -a "content='Ansible is awesome.' dest=./motd"
+   32  2019-09-06 15:09:07 ll motd 
+    cat motd
+    ansible localhost -m copy -a "content='Ansible is awesome.' dest=./motd"
+    ansible localhost -m command -a "echo "Ansible is awesome" > ./motd"
+   ansible localhost -m command -a "echo 'Ansible is awesome'>./motd"
+    ansible-doc -l
+    ansible-doc lineinfile
+    ansible localhost -m lineinfile -a "path=./motd  "
+    ansible localhost -m lineinfile -a "path=./motd  line='ansible is super awesome'"
+   cat ./motd 
+    ansible-doc lineinfile
+    ansible localhost -m lineinfile -a "path=./motd  create='ansible is super awesome'"
+   cat ./motd 
+   ansible-doc lineinfile
+   ansible localhost -m lineinfile -a "path=./motd  backrefs='ansible is super awesome'"
+   47  2019-09-06 15:20:14 ansible localhost -m lineinfile -a "path=./motd  backrefs='ansible is super awesome' dest=./motd"
+   48  2019-09-06 15:20:43 ansible-doc lineinfile
+   49  2019-09-06 15:21:35 ansible localhost -m lineinfile -a "path=./motd  backrefs='awesome' line='jai' dest=./motd"
+   50  2019-09-06 15:21:52 ansible localhost -m lineinfile -a "path=./motd  backrefs='yes' line='jai' dest=./motd"
+   51  2019-09-06 15:22:32 #ansible localhost -m lineinfile -a "path=./motd  backrefs=yes<'' dest=./motd"
+   52  2019-09-06 15:22:34 ansible-doc lineinfile
+   53  2019-09-06 15:23:23 #ansible localhost -m lineinfile -a "path=./motd  regexp=awesome line=jai dest=./motd"
+   54  2019-09-06 15:23:29 ansible localhost -m lineinfile -a "path=./motd  regexp=awesome line=jai dest=./motd"
+   55  2019-09-06 15:23:40 cat "path=./motd  backrefs='yes' line='jai' dest=./motd"
+   56  2019-09-06 15:23:46 cat ./motd
+   57  2019-09-06 15:24:32 cat "path=./motd  backrefs='yes' line='superawesome' dest=./motd"
+   58* 2019-09-06 15:25:04 
+   59  2019-09-06 15:25:15 cat ./motd
+   60  2019-09-06 15:25:43 ansible-doc lineinfile
+   vim adhoc
+   ansible-doc lineinfile
